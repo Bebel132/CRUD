@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --cor-1: #3A7B99;
+    --cor-2: #70AFCE;
+    --cor-3: #A5DEF1;
+    --cor-4: #FFFFFF;
+    --verde: #33aa77;
+    --vermelho: #aa3333;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    background: var(--cor-3);
+    background: linear-gradient(315deg, var(--cor-3) 8%, var(--cor-2) 92%);
+    padding: 1rem;
+    margin: 0 1rem;
+}
+
+.container {
+    width: 100%;
+    max-width: 50rem;
+    border-radius: 5px;
+    background-color: var(--cor-4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+.form {
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form input {
+    padding: .5rem;
+    margin: .5rem 0;
+}
+
+.entrada {
+    border: none;
+    border-radius: 5px;
+    background: #e8e8e8;
+    transition: 0.3s;
+}
+   
+.entrada:focus {
+    outline-color:  var(--cor-1);
+    background: #e8e8e8;
+    box-shadow: inset 20px 20px 60px #c5c5c5,
+           inset -20px -20px 60px #ffffff;
+    transition: 0.3s;
+}
+
+#enviar {
+    width: 10rem;
+    margin: 1rem auto;
+    cursor: pointer;
+    background-color: var(--verde);
+    color: var(--cor-4);
+    border: none;
+    transition: .2s;
+}
+
+#enviar:hover {
+    transform: scale(1.09);
+}
+
+#tabela {
+    width: 100%;
+    font-size: smaller;
+}
+
+th:nth-child(1){
+    width: 10%;
+}
+
+th:nth-child(2){
+    width: 40%;
+}
+
+th:nth-child(3){
+    width: 40%;
+}
+
+th:nth-child(4){
+    width: 10%;
+}
+
+td {
+    text-align: center;
+}
+
+.botao {
+    text-align: start;
+    display: flex;
+    justify-content: space-around;
+}
+
+.botao button {
+    padding: .3rem;
+    margin: .2rem;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.botao button:hover {
+    transform: scale(1.09);
+}
+
+.botao button:nth-child(1){
+    background-color: var(--cor-1);
+    color: var(--cor-4);
+    border: none;
+}
+
+.botao button:nth-child(2){
+    background-color: var(--vermelho);
+    color: var(--cor-4);
+    border: none;
+}
