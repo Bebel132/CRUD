@@ -1,7 +1,11 @@
 let nome;
 let nascimento;
 let id = Math.floor(Math.random() * 10000);
+let mostrar = true;
 let tabela = document.querySelector("#tbody");
+
+const data = new Date();
+const hoje = `${String(data.getMonth() + 1).padStart(2,'0')}-${data.getDate().toString().padStart(2,'0')}`;
 
 let dados;
 
@@ -96,6 +100,61 @@ function preencherTabela(){
     }
 }
 
+function mostrarModal(){
+    dados.forEach(e => {
+        console.log(e.mostrar)
+        if(e.nascimento.slice(5) == hoje){
+            if(e.mostrar){
+                const modal = document.createElement('div');
+                modal.classList.add('modal');
+                modal.classList.add('visible');
+
+                const modalContainer = document.createElement('div');
+                modalContainer.classList.add('modal-container')
+
+                const close = document.createElement('span');
+                close.classList.add('close');
+                close.append(document.createTextNode('x'));
+
+                const modalHeader = document.createElement('div');
+                modalHeader.classList.add('modal-header');
+
+                const modalHeaderTitle = document.createElement('h1');
+                modalHeaderTitle.classList.add('modal_header-title');
+
+                const modalBody = document.createElement('div');
+                modalBody.classList.add('modal-body')
+
+                const modalBodyText = document.createElement('p');
+                modalBodyText.classList.add('modal_body-text');
+                const a = document.createElement('a');
+                a.setAttribute('href', "https://www.mensagemaniversario.com.br/" );
+                a.setAttribute('target', "_blank");
+                a.append(document.createTextNode("mensagens de aniversáriokk"))
+
+                const titulo = document.createTextNode(`Hoje é aniversário do ${e.nome}!`);
+                const texto = document.createTextNode('Vai lá dar um feliz aniversário pra ele(a)');
+                modalHeaderTitle.append(titulo)
+                modalBodyText.append(texto);
+
+                modalHeader.append(modalHeaderTitle)
+                modalHeader.append(close);
+                modalBody.append(modalBodyText);
+                modalBody.append(a)
+                modalContainer.append(modalHeader, modalBody)
+                modal.append(modalContainer)
+                document.body.append(modal)
+
+                close.addEventListener('click', () => {
+                    document.body.removeChild(modal);
+                    e.mostrar = false;
+                    localStorage.setItem('dados', JSON.stringify(dados));
+                })
+            }    
+        }
+    });
+}
+
 document.querySelector("#enviar").onclick = e => {
     e.preventDefault();
     nome = document.querySelector("#nome").value.trim();
@@ -104,7 +163,8 @@ document.querySelector("#enviar").onclick = e => {
         const dado = {
             id: id,
             nome: nome,
-            nascimento: nascimento
+            nascimento: nascimento,
+            mostrar: mostrar
         };
         dados.push(dado);
         if(localStorage.length == 0 || localStorage.dados == "[]"){
@@ -123,8 +183,10 @@ document.querySelector("#enviar").onclick = e => {
         document.querySelector("#nome").value = "";
         document.querySelector("#nascimento").value = "";
         preencherTabela();
+        mostrarModal();
         id = Math.floor(Math.random() * 10000);
     }
 }
 
 preencherTabela();
+mostrarModal();
