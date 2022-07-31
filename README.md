@@ -1,7 +1,7 @@
 
 #  CRUD
 
-<img src="https://img.shields.io/badge/status-finalizado-brightgreen">  <a href="https://github.com/Bebel132/CRUD/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Bebel132/CRUD?style=social"></a>
+<img src="https://img.shields.io/badge/status-desenvolvimento-brightgreen">  <a href="https://github.com/Bebel132/CRUD/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Bebel132/CRUD?style=social"></a>
 
 Projeto de um CRUD simples usando html, css e js
 
