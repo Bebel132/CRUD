@@ -132,7 +132,7 @@ function mostrarModal(){
                 a.setAttribute('target', "_blank");
                 a.append(document.createTextNode("mensagens de aniversáriokk"))
 
-                const titulo = document.createTextNode(`Hoje é aniversário do ${e.nome}!`);
+                const titulo = document.createTextNode(`Hoje é aniversário do(a) ${e.nome}!`);
                 const texto = document.createTextNode('Vai lá dar um feliz aniversário pra ele(a)');
                 modalHeaderTitle.append(titulo)
                 modalBodyText.append(texto);
