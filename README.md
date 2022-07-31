@@ -17,6 +17,7 @@ Projeto de um CRUD simples usando html, css e js
 - R - READ
 - U - UPDATE
 - D - DELETE
+- Modal avisando o que é aniversário de alguém
 - Os dados são guardados localmente
 
 
@@ -24,6 +25,10 @@ Projeto de um CRUD simples usando html, css e js
 
 <p align="center">
   <img src="https://media.discordapp.net/attachments/805860115814940713/1001564749504446484/unknown.png?width=763&height=367" />
+</p>
+
+<p align="center">
+  <img src="https://media.discordapp.net/attachments/838429983865045002/1003289624271126578/unknown.png?width=722&height=409" />
 </p>
 
 
